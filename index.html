@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="box.png">
+
+    <title>Formulário</title>
+</head>
+    <body onload="declaraVariavel()">
+        <div class="caixa">
+            <div class="caixa-fundo">
+                <p>Formulário </br>para compras de</p>
+                <h1>Pacote de adesivisos</h1>
+                <img src="caixa.png" alt="caixa">
+            </div>
+    	    <!--INICIO DO FORMULÁRIO-->
+            <label>Quais adesivos:</label>
+		    <input class="checkbox" type="checkbox" name="react" value="recat">React<br>
+		    <input class="checkbox" type="checkbox" name="viue" value="viue">Viue<br>
+		    <input class="checkbox" type="checkbox" name="angular" value="angular">Angular
+
+            <!--BOTÃO QUNATIDADE-->
+            <label>Quantos adesivos de cada?</label>
+            <button class="botao" id="botao-" onclick="subtrai()">-</button>
+            <input class="input-quantidade" id="input01" type="number" placeholder="0">
+            <button class="botao" id="botao+" onclick="adiciona()">+</button>
+            <br>
+
+            <!--OBESERVAÇÕES-->
+            <label>Observações:</label><br>
+		    <textarea rows="10" cols="50" id="observacoes" class="observacoes"></textarea>
+
+            <!--BOTÃO ENVIAR-->
+            <form>
+              <div class="fundo-enviar">
+                <button type="submit" class="enviar" onclick="enviar()">ENVIAR</button>
+              </div>
+           </form>		   
+       </div>
+
+<!-- CODIGO JAVASCRIPT-->
+    <script>
+
+        /*FUNÇÃO PARA ZERAR VARIÁVEL*/
+        function declaraVariavel() {
+            var inputDeNumeros = 0
+            document.getElementById("input01").value = inputDeNumeros;
+        }
+
+        /*FUNÇÃO PARA SUBTRAIR()*/
+        function subtrai() {
+            inputDeNumeros = document.getElementById("input01").value;
+            parseInt(inputDeNumeros);
+            document.getElementById("input01").value = (inputDeNumeros - 1);
+        }
+
+        /*FUNÇÃO PARA ADICIONAR()*/
+        function adiciona() {
+            inputDeNumeros = document.getElementById("input01").value;
+            document.getElementById("input01").value = (parseInt(inputDeNumeros) + 1);
+        }
+       
+    </script>
+
+</body>
+</html>
